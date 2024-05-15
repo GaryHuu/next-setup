@@ -26,7 +26,7 @@ describe('Home Page', () => {
 		render(await Home({ params: { lang: 'en' } }));
 
 		// Find the h1 element with the text "Mocked Title"
-		const titleElement = await screen.findByText('Mocked Title');
+		const titleElement = await screen.findByText('Mocked Title 1');
 
 		// Assert that the h1 element is in the document
 		expect(titleElement).toBeDefined();
