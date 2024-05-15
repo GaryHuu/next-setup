@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { getDictionary } from '@/lib/dictionary';
-import LocaleSwitcher from './locale-switcher';
 import { Locale } from '@/configs/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
+import Link from 'next/link';
+import LocaleSwitcher from './locale-switcher';
 
 export default async function Header({ lang }: { lang: Locale }) {
 	const { navigation } = await getDictionary(lang);

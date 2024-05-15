@@ -18,17 +18,18 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
-	const pathnameIsMissingLocale = i18n.locales.every(
-		(locale: any) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+
+	const pathnameHasLocale = i18n.locales.some(
+		(locale: string) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
 	);
 
+	if (pathnameHasLocale) return;
+
 	// Redirect if there is no locale
-	if (pathnameIsMissingLocale) {
-		const locale = getLocale(request);
-		return NextResponse.redirect(
-			new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url),
-		);
-	}
+	const locale = getLocale(request);
+	return NextResponse.redirect(
+		new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url),
+	);
 }
 
 export const config = {
