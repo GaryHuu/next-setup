@@ -1,0 +1,15 @@
+{
+	"extends": [
+		"next",
+		"next/core-web-vitals",
+		"prettier",
+		"plugin:prettier/recommended",
+		"eslint:recommended"
+	],
+	"rules": {
+		"no-console": "error",
+		"prefer-const": "error",
+		"no-unused-vars": "warn",
+		"no-irregular-whitespace": "off"
+	}
+}

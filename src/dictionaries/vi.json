@@ -1,0 +1,16 @@
+{
+	"navigation": {
+		"home": "Trang Chủ",
+		"about": "Giới Thiệu"
+	},
+	"page": {
+		"home": {
+			"title": "Chào Mừng Đến Với GoSell",
+			"description": "Quốc tế hóa trong GoSell"
+		},
+		"about": {
+			"title": "Về Chúng Tôi",
+			"description": "Đây là trang giới thiệu"
+		}
+	}
+}
